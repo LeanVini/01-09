@@ -1,0 +1,44 @@
+name: Meu Primeiro Workflow de CI
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+
+jobs:
+  meu-primeiro-job:
+    runs-on: ubuntu-latest
+    steps:
+      # Faz o checkout do código do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Exibe Nome e RA
+      - name: Exibir Nome e RA
+        run: echo "RA: 6324670 - Nome: Luis"
+
+      # Mostra o diretório de trabalho
+      - name: Mostra o diretório de trabalho
+        run: pwd
+
+      # Imprime o nome do repositório
+      - name: Imprimir Nome do Repositório
+        run: echo "Nome do Repositório: ${{ github.repository }}"
+
+      # Exibe o nome da branch
+      - name: Exibir branch
+        run: echo "Branch: ${{ github.ref_name }}"
+
+      # Exibe o autor do commit
+      - name: Exibir autor do commit
+        run: echo "Autor do Commit: ${{ github.actor }}"
+
+      # Exibe a mensagem do commit
+      - name: Exibir mensagem do commit
+        run: echo "Mensagem do Commit: ${{ github.event.head_commit.message }}"
+
+      # Lista arquivos do repositório
+      - name: Listar arquivos do repositório
+        run: ls -la
