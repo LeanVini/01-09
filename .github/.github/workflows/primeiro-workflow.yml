@@ -17,7 +17,7 @@ jobs:
 
       # Exibe Nome e RA
       - name: Exibir Nome e RA
-        run: echo "RA: 6324670 - Nome: Luis"
+        run: echo "RA: 6324613 - Nome: Vinicius"
 
       # Mostra o diretório de trabalho
       - name: Mostra o diretório de trabalho
